@@ -1,0 +1,98 @@
+@import "reset.css";
+
+body {
+  font-family: "Arial, Helvetica, sans-serif";
+  width: 100%;
+}
+div.wrapper {
+  display: block;
+}
+
+div.main {
+  display: block;
+  margin: 10px auto;
+  width: 600px;
+}
+
+nav ul li {
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 20px;
+  margin-bottom: 50px;
+  color: rgb(99, 99, 99);
+}
+
+nav ul li.active {
+  text-decoration: underline;
+  color: rgb(48, 48, 48);
+}
+
+div.view h2 {
+  font-size: 24px;
+  padding: 20px 0;
+  color: rgb(48, 48, 48);
+}
+
+table th, table td {
+  padding: 3px 5px;
+}
+
+table td:nth-child(4) {
+  text-align: right;
+}
+
+table td:nth-child(2) {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+table tbody {
+  border-bottom: 1px solid #3b3a32;
+}
+
+#board-view table tbody tr {
+  cursor: pointer;
+}
+#board-view table tbody tr:hover {
+  background-color: #AFE4F5;
+}
+
+table tbody tr:nth-child(even){
+
+}
+
+table tbody tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
+
+table tr th a {
+  text-decoration: none;
+}
+
+table thead tr {
+  border-bottom: 1px solid #3b3a32;
+}
+
+table thead th{
+  padding-bottom: 4px;
+  text-align: left;
+}
+
+.team-view {
+  margin-top: 60px;
+}
+.team-view h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.team-view h3 {
+  font-size: 16px;
+  padding-bottom: 18px;
+  color: #9E9C9C;
+}
+
+.back-btn {
+  display: block;
+  margin-bottom: 20px;
+}
