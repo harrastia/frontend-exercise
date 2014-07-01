@@ -1,0 +1,49 @@
+<nav>
+    <ul>
+        <li ng-class="{active:isActive('pilots')}" ng-click="showView('pilots')">Pilots</li>
+        <li ng-class="{active:isActive('standings')}"ng-click="showView('standings')">Current standings</li>
+    </ul>
+</nav>
+
+<div class="view" ng-switch on="currentView">
+    <div ng-switch-default>
+        <h2> Pilots </h2>
+        <table>
+            <thead>
+            <tr>
+                <th><a href="" ng-click="predicate = 'driver'; reverse = !reverse ">Name</a></th>
+                <th><a href="" ng-click="predicate = 'country'; reverse = !reverse ">Country</a></th>
+                <th><a href="" ng-click="predicate = 'team'; reverse = !reverse ">Team</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="driver in drivers | orderBy:predicate:reverse">
+                <td>{{ driver.driver }}</td>
+                <td>{{ driver.country }}</td>
+                <td>{{ driver.teamName }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="board-view" ng-switch-when="standings">
+        <h2> Current standings </h2>
+        <table>
+            <thead>
+            <tr>
+                <th><a href="" ng-click="predicate = 'driver'; reverse = !reverse ">Name</a></th>
+                <th><a href="" ng-click="predicate = 'country'; reverse = !reverse ">Country</a></th>
+                <th><a href="" ng-click="predicate = 'team'; reverse = !reverse ">Team</a></th>
+                <th><a href="" ng-click="predicate = 'points'; reverse = !reverse ">Points</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="driver in drivers | orderBy:predicate:reverse" ng-click="showTeam(driver.team)">
+                <td>{{ driver.driver }}</td>
+                <td>{{ driver.country }}</td>
+                <td>{{ driver.teamName }}</td>
+                <td>{{ driver.points }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
