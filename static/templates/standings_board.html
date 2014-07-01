@@ -1,0 +1,23 @@
+<div class="team-view">
+    <a class="back-btn" href="#/standings">Back</a>
+    <h2>Team {{ team.team}} </h2>
+    <h3>Car {{ team.car }}</h3>
+    <table>
+        <thead>
+        <tr>
+            <th><a href="" ng-click="predicate = 'driver'; reverse = !reverse ">Name</a></th>
+            <th><a href="" ng-click="predicate = 'country'; reverse = !reverse ">Country</a></th>
+            <th><a href="" ng-click="predicate = 'points'; reverse = !reverse ">Points</a></th>
+            <th><a href="" ng-click="predicate = 'team'; reverse = !reverse ">Team</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="driver in drivers | byTeam:team.id | orderBy:predicate:reverse">
+            <td>{{ driver.driver }}</td>
+            <td>{{ driver.country }}</td>
+            <td>{{ driver.points }}</td>
+            <td>{{ driver.team }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
