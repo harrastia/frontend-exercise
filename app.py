@@ -16,7 +16,7 @@ def standings():
     pass
 
 
-@app.route('/pai/team/<int:team_id>.json')
+@app.route('/api/team/<int:team_id>.json')
 def team_details(team_id):
     # TODO: Implement
     pass
