@@ -26,7 +26,7 @@ Data for the drivers and teams is provided in the `data/` folder.
 
 ### Frontend
 
-Using AngularJS and angular-router create 2 views, one containing the list of
+Using AngularJS and **angular-router** create 2 **views**, one containing the list of
 pilots, their country and team and the current standings on the race.
 Update the results every second.
 
@@ -37,9 +37,9 @@ for the team. Make some way to return to the standings list.
 
 Other requirements/suggestions:
 
- * A little of UI candy is appreciated.
- * Implement at least a filter, a service and a directive using AngularJS.
+ * **Implement** at least a **filter**, a **service** and a **directive** using AngularJS.
  * **Write couple tests with any framework of choice.**
+ * A little of UI candy is appreciated.
 
 ## Tips to get started
 
