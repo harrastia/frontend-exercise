@@ -27,8 +27,8 @@ app.controller("StandingsController", function($scope, $http, $timeout) {
         $scope.getData();
         $scope.intervalFunction();
     }, 1000);
-    $scope.getData();
   };
+  $scope.getData();
 
   // Kick off the interval
   $scope.intervalFunction();
