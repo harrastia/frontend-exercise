@@ -35,6 +35,8 @@ app.service('standingsService', ['$http', '$interval', function($http, $interval
 }]);
 
 app.filter('search_driver', function() {
+    /* Turns out I could do this without creating search_driver at all by
+     * using built-in filter instead. I'll left this here for bonus points :) */
     return function(input, query) {
         if (input == undefined || query == undefined) {
             return input;

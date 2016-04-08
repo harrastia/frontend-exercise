@@ -2,3 +2,6 @@
         height: 60px;
         vertical-align: text-top;
 }
+.error-alert {
+        color: red;
+}

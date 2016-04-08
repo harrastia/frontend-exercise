@@ -1,12 +1,11 @@
-<!-- I could use the in-built filter for this, but I needed to create a filter... -->
 <h2>Welcome to F1 standings app!</h2>
 <p>As you can see, I'm not the best one to style these apps...</p>
-<p style="color:red;">{{standingsService.error}}
+<p class="error-alert">{{standingsService.error}}
 </p>
 <div>
         <table class="table" id="standings-table">
                 <thead><tr class="header-row"><th class="col-md-1">Position</th><th class="col-md-1">Points</th><th>Driver<br /><input ng-model="query" /></th><th>Country</th><th>Team</th></tr></thead>
-                <tbody ng-repeat="standing in standingsService.standings|search_driver:query">      
+                <tbody ng-repeat="standing in standingsService.standings|search_driver:query">
                         <tr><td>{{standing.position}}</td><td>{{standing.points}}</td><td><a href="#/team/{{standing.team}}/">{{standing.driver}}</a></td><td>{{standing.country}}</td><td>{{standing.team_name}}</td></tr>
                 </tbody>
         </table>
