@@ -11,19 +11,26 @@ app.config(function($routeProvider) {
       });
   });
 
-app.controller("StandingsController", function($scope, $http, $interval) {
-    $scope.getData = function(){
-        $http.get('api/standings.json').then(
+app.controller("StandingsController", function($scope, $http, $interval, standingsService) {
+    $scope.refreshData = function() {
+        standingsService.getData().then(
             function(data) {
-                $scope.error = '';
+                $scope.error = ''
                 $scope.standings = data.data.sort(function(a, b) {return a.position - b.position});
             },
             function(data) {
-                $scope.error = 'Failed to refresh data!';
+                $scope.error = 'Failed to refresh data!'
             });
     };
-    $interval($scope.getData, 1000);
+    $interval($scope.refreshData, 1000);
+    $scope.refreshData();
 });
+
+app.service('standingsService', ['$http', function($http) {
+    this.getData = function() {
+        return $http.get('api/standings.json');
+    };
+}]);
 
 app.filter('search_driver', function() {
     return function(input, query) {
