@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
       });
   });
 
-app.controller("StandingsController", function($scope, $http, $timeout) {
+app.controller("StandingsController", function($scope, $http, $interval) {
     $scope.getData = function(){
         $http.get('api/standings.json').then(
             function(data) {
@@ -22,16 +22,7 @@ app.controller("StandingsController", function($scope, $http, $timeout) {
                 $scope.error = 'Failed to refresh data!';
             });
     };
-    $scope.intervalFunction = function(){
-    $timeout(function() {
-        $scope.getData();
-        $scope.intervalFunction();
-    }, 1000);
-  };
-  $scope.getData();
-
-  // Kick off the interval
-  $scope.intervalFunction();
+    $interval($scope.getData, 1000);
 });
 
 app.filter('search_driver', function() {
